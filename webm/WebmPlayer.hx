@@ -19,7 +19,7 @@ class WebmPlayer extends Bitmap
 {
 	static inline var BYTES_PER_SAMPLE = 4 * 8192;
 	static var BLANK_BYTES:ByteArray;
-	public static var SKIP_STEP_LIMIT = 0;
+	public var SKIP_STEP_LIMIT = 0;
 
 	public var frameRate(default, null):Float;
 	public var duration(default, null):Float;
@@ -44,10 +44,10 @@ class WebmPlayer extends Bitmap
 	
 	public function new()
 	{
-	super(null);
+		super(null);
 	}
-
-	public function fuck(io:WebmIo, soundEnabled:Bool = true):Void
+	
+	public function initPlayer(io:WebmIo, soundEnabled:Bool = true):Void
 	{
 		wasHitOnce = false;
 		this.soundEnabled = soundEnabled;
